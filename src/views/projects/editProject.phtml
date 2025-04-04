@@ -2,7 +2,7 @@
 <section id="edit-project">
     <h2>Modifier le projet</h2>
 
-    <form action="index.php?route=editProject&projectId=<?= $project['id'] ?>" method="POST">
+    <form action="index.php?route=editProject&projectId=<?= $project['id'] ?>" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="projectId" value="<?= htmlspecialchars($project['id']) ?>">
 
         <!-- Titre -->

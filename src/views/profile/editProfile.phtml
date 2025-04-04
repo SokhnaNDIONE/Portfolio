@@ -40,10 +40,11 @@
             </div>
             
             <!-- Champ de description avec éditeur Quill -->
-            <div class="form-group full-width">
+           <div class="form-group full-width">
                 <label for="description">Description</label>
                 <div id="editor">
-                    <?= htmlspecialchars($user->getDescription()) ?>
+                    <!-- Afficher le contenu avec des balises HTML (pas échappées) -->
+                    <?= $user->getDescription() ?>
                 </div>
                 <input type="hidden" name="description" id="description" value="<?= $user->getDescription() ?>">
             </div>

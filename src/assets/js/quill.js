@@ -13,9 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Précharger le contenu dans l'éditeur Quill à partir de la description
+    const description = document.getElementById('description').value;
+    quill.root.innerHTML = description;  // Charge le HTML dans Quill (ne pas échapper le contenu)
+
     // Lorsque le contenu change, mettre à jour le champ caché
     quill.on('text-change', function() {
-        const description = quill.root.innerHTML;
-        document.getElementById('description').value = description;
+        const updatedDescription = quill.root.innerHTML;
+        document.getElementById('description').value = updatedDescription;
     });
 });
