@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?= $pageTitle ?? 'Portfolio' ?></title>
+  <link rel="stylesheet" href="src/assets/scss/app.css">
+  <script src="src/assets/js/filterProjects.js" defer></script>
+  <!-- Lier le CSS de Quill -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <!-- Lier le JS de Quill -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <!-- Lier le script de votre fichier personnalisé -->
+  <script src="src/assets/js/quill.js" defer></script>
+
+</head>
+<body>
+ <nav class="navbar">
+  <a href="/" class="navbar__brand">Portfolio</a>
+  
+  <!-- Checkbox invisible pour le toggle -->
+  <input type="checkbox" id="nav-toggle" class="navbar__checkbox">
+  
+  <!-- Label qui sert de bouton burger -->
+  <label for="nav-toggle" class="navbar__toggle">
+    <span class="navbar__icon"></span>
+  </label>
+  
+  <!-- Menu -->
+  <ul class="navbar__menu">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#work">Projets</a></li>
+    <?php if(isset($_SESSION["user_id"])): ?>
+      <li><a href="index.php?route=logout">Déconnexion</a></li>
+      <li><a href="index.php">Accueil</a></li>
+      <li><a href="index.php?route=admin">Mon espace</a></li>
+    <?php endif; ?>
+  </ul>
+</nav>
+
+  <main>
+    <?php include $template.'.phtml'; ?>
+  </main>
+
+  <footer>
+    <p>&copy; <?= date('Y') ?> Mon Portfolio</p>
+  </footer>
+</body>
+</html>

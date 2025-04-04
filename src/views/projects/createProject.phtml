@@ -1,0 +1,44 @@
+<form action="index.php?route=createProject" method="POST" class="form-create-project">
+    
+    <!--Titre-->
+    <label for="title" class="form-label">Titre du projet</label>
+    <input type="text" id="title" name="title" value="<?= htmlspecialchars($project['title'] ?? '') ?>" required class="form-input">
+    
+    
+    <!--Description-->
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" name="description" required class="form-input"><?= htmlspecialchars($project['description'] ?? '') ?></textarea>
+    
+    
+    <!--Image-->
+    <label for="image" class="form-file-label">Image du projet</label>
+    <input type="file" id="image" name="image" class="form-input">
+
+
+    <!--Catégorie-->
+    <label for="category_id" class="form-label">Catégorie</label>
+    <select id="category_id" name="category_id" class="form-input">
+    <?php foreach ($categories as $category): ?>
+        <option value="<?= $category['id'] ?>" <?= isset($project['category_id']) && $project['category_id'] == $category['id'] ? 'selected' : '' ?>>
+                <?= htmlspecialchars($category['name']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+
+    <!--Labels-->
+    <div class="form-category-label">
+        <label>Labels</label>
+        <?php foreach ($labels as $label): ?>
+            <label class="form-label">
+                <input type="checkbox" name="labels[]" value="<?= $label['id'] ?>" 
+                    <?= isset($projectLabels) && in_array($label['id'], $projectLabels) ? 'checked' : '' ?> class="form-checkbox">
+                <?= htmlspecialchars($label['name']) ?>
+            </label>
+        <?php endforeach; ?>
+    </div>
+
+    <button type="submit">Soumettre</button>
+</form>
+
+

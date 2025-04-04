@@ -1,0 +1,54 @@
+// 404-style.scss
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container404{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.error-message {
+  color: $error-color;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.error-description {
+  color: $text-color;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.error-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $button-color;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 30px;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
+.success-message {
+    background-color: #28a745; /* Vert pour un succès */
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}

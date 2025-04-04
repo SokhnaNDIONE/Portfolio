@@ -1,0 +1,1116 @@
+// Import
+@import 'variables';
+@import '404-style';
+
+// Global Styles
+body {
+  font-family: Arial, sans-serif;
+  color: $discord-text-muted;
+  background-color: $discord-dark;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  // Prend toute la hauteur de la page
+}
+
+main {
+  flex: 1;  // Cette règle fait en sorte que main occupe tout l'espace restant entre le header et le footer
+}
+
+// Navigation
+// nav {
+//   background: $discord-blue;
+//   padding: 1rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   a {
+//     color: $text-white;
+//     text-decoration: none;
+//     font-weight: bold;
+
+//     &:hover {
+//       color: $text-white;
+//     }
+//   }
+
+//   ul {
+//     list-style: none;
+//     display: flex;
+//     gap: 1rem;
+
+//     li {
+//       a {
+//         color: $text-white;
+//         text-decoration: none;
+//         &:hover {
+//           color: $fun;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// Hero Section
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: lighten($discord-blue, 10%);
+  color: $text-white;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: $text-white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    background-color: $discord-blue;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($discord-blue, 10%);
+      color: $text-white;
+    }
+  }
+
+  figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 2rem;
+  }
+}
+
+// About Section
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Pour centrer verticalement */
+  padding: 2rem;
+  color: $text-white;
+  text-align: center;
+  
+  h2 {
+    color: $fun;
+    margin-bottom: 1rem; /* Un peu d'espace sous le titre */
+  }
+
+  figure {
+    display: flex;
+    justify-content: center; /* Centrer l'image horizontalement */
+    margin-bottom: 1rem; /* Un peu d'espace sous l'image */
+  }
+
+  figure img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid $discord-blue;
+  }
+
+  article {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments de l'article */
+    gap: 0.5rem; /* Espacement entre les éléments */
+    max-width: 800px; /* Limite la largeur de l'article */
+    width: 100%; /* Prend toute la largeur disponible jusqu'à 800px */
+  }
+
+  p {
+    max-width: 600px; 
+    margin: 0 auto; 
+  }
+  a{
+    color: $discord-blue;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .a {
+    color: $text-white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    background-color: $discord-blue;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($discord-blue, 10%);
+      color: $text-white;
+    }
+  }
+}
+
+// Skills Section
+#skills {
+  padding: 2rem;
+  color: $text-white;
+  text-align: center;
+
+  h2 {
+    color: $fun;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0;
+
+    li {
+      background: $discord-light;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+
+      div {
+        background: $light; // Utilisation de la couleur légère ici
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 5px;
+
+        div {
+          background: $fun;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+#work {
+  padding: 3rem; /* Augmenter l'espace autour des projets */
+  color: $text-white;
+
+  h2 {
+    color: $fun;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Augmenter la taille du titre */
+  }
+
+  .btn-add {
+    display: inline-block;
+    background-color: $discord-blue;
+    color: $text-white;
+    padding: 1rem 2rem; /* Augmenter la taille du bouton */
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: darken($discord-blue, 10%);
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Augmenter la taille des colonnes */
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    background: $discord-light;
+    padding: 1.5rem; /* Augmenter l'espace interne des articles */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-container {
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 250px; /* Augmenter la hauteur des images */
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1); /* Zoom plus fort sur l'image au survol */
+      }
+    }
+
+    h3 {
+      color: $fun;
+      margin-top: 1.5rem; /* Augmenter l'espace au-dessus du titre */
+      font-size: 1.4rem; /* Augmenter la taille de la police du titre */
+    }
+
+    p {
+      color: $discord-text-muted;
+      font-size: 1rem; /* Augmenter la taille de la police du texte */
+      margin-top: 0.5rem;
+    }
+
+    .labels {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .label-btn {
+        background-color: $discord-blue;
+        color: $text-white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin: 0.3rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem; /* Agrandir le bouton */
+      background-color: $discord-blue;
+      color: $text-white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: darken($discord-blue, 10%);
+      }
+    }
+    
+    .btn-edit, .btn-delete {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem; /* Agrandir les boutons */
+      background-color: $discord-dark;
+      color: $text-white;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: darken($discord-dark, 10%);
+      }
+    }
+
+    .btn-delete {
+      background-color: $error;
+      
+      &:hover {
+        background-color: darken($error, 10%);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      grid-template-columns: 1fr 1fr; /* Deux colonnes sur tablettes */
+    }
+  }
+
+  @media (max-width: 480px) {
+    ul {
+      grid-template-columns: 1fr; /* Une seule colonne sur mobiles */
+    }
+  }
+}
+
+// Contact Section
+#contact {
+  padding: 2rem;
+  background-color: $discord-light;
+  color: $text-white;
+  text-align: center;
+
+  h2 {
+    color: $fun;
+  }
+
+  address {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 1.5rem;
+
+        h3 {
+          font-size: 1.2rem;
+          color: $discord-blue;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $discord-text-muted;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  background: $discord-dark;
+  padding: 1rem;
+  color: $text-white;
+  text-align: center;
+  position: fixed;  // Le footer est fixé en bas de la page
+  bottom: 0;
+  left: 0;
+  width: 100%;  // Assure que le footer occupe toute la largeur de l'écran
+  box-sizing: border-box;  // Cela fait en sorte que le padding ne fait pas dépasser l'élément
+  z-index: 100;
+  p {
+    margin: 0;
+  }
+}
+
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: $discord-light;
+  color: $text-white;
+  
+  .project-content {
+    max-width: 800px;
+    width: 100%;
+    background: darken($discord-light, 5%);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    .project-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $text-white;
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $discord-text-muted;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      background-color: $discord-blue;
+      color: $text-white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($discord-blue, 10%);
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #about, #skills, #work, #contact {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 2rem 1rem;
+  }
+}
+
+
+
+// STYLE PAGE LOGIN
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12rem;
+    margin-left: 45rem;
+    background-color: $discord-light;
+    color: $text-light;
+    padding: 20px;
+    max-width: 450px;
+    border-radius: 30px;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+
+    label {
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid $input-border;
+        border-radius: 5px;
+        background-color: #3a3d42;
+        color: $text-light;
+    }
+
+    button {
+        padding: 10px;
+        background-color: $button-color;
+        color: $text-light;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        
+        &:hover {
+            background-color: darken($button-color, 10%);
+        }
+    }
+}
+
+.signup-link {
+    font-size: 1rem;
+    margin-top: 20px;
+
+    a {
+        color: $button-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Boutons généraux */
+.btn-main, .btn-edit, .btn-delete, .btn-view, .btn-add {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+/* Bouton 'Voir le projet' */
+.btn-view-project {
+    background-color: $discord-dark;
+    color: $text-white;
+    &:hover {
+        background-color: darken($discord-dark, 10%);
+    }
+}
+
+/* Bouton 'Modifier' */
+.btn-edit-project {
+    background-color: $fun;
+    color: $text-white;
+    &:hover {
+        background-color: darken($fun, 10%);
+    }
+}
+
+/* Bouton 'Supprimer' */
+.btn-delete-project {
+    background-color: $error;
+    color: $text-white;
+    &:hover {
+        background-color: darken($error, 10%);
+    }
+}
+
+/* Bouton 'Ajouter un projet' */
+.btn-add {
+    background-color: $success;
+    color: $text-white;
+    &:hover {
+        background-color: darken($success, 10%);
+    }
+}
+
+/* Pour les liens de chaque section */
+article a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover et focus */
+article a:hover {
+    color: $text-white;
+    background-color: darken($light, 5%);
+}
+
+/* Focus */
+.btn-main:focus, .btn-edit:focus, .btn-delete:focus, .btn-view:focus, .btn-add:focus {
+    outline: 3px solid $discord-blue;
+}
+
+
+/* Section globale Form Edit */
+.section.edit-profile {
+    padding: 40px 20px;
+    background-color: $discord-dark; /* Fond sombre */
+}
+
+/* Titre de la section */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-white; /* Texte clair */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Conteneur du formulaire */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style du formulaire */
+.edit-form {
+    background-color: $light; /* Fond plus clair pour le formulaire */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Grille du formulaire */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+/* Colonne du formulaire (gauche et droite) */
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style des groupes de champs */
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* Labels des champs */
+.form-group label {
+    font-weight: bold;
+    color: $text-white; 
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Champs de saisie */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid $input-border;
+    border-radius: 8px;
+    background-color: $discord-light; /* Fond sombre pour les champs */
+    color: $text-white; /* Texte clair */
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+/* Champs au focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: $discord-blue;
+    outline: none;
+}
+
+/* Textearea spécifique */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Boutons d'action */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Bouton principal (Enregistrer) */
+.btn.btn-primary {
+    padding: 12px 20px;
+    background-color: $fun;
+    color: $text-white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: darken($fun, 10%);
+}
+
+/* Bouton d'annulation (Annuler) */
+.btn.btn-outline {
+    padding: 12px 20px;
+    background-color: transparent;
+    color: $discord-blue; /* Texte bleu clair */
+    font-weight: bold;
+    border: 2px solid $discord-blue; /* Bordure bleue */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.btn.btn-outline:hover {
+    border-color: $fun; /* Change la couleur au survol */
+    color: $fun;
+}
+
+/* Style pour l'input de la photo de profil */
+input[type="file"] {
+    border: none;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: $discord-light; 
+    color: $text-white; 
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+.labels {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.label-btn {
+    background-color: #7289da; 
+    color: #fff; 
+    padding: 6px 20px;
+    border-radius: 50px; 
+    font-size: 14px; 
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none; 
+    display: inline-block;
+    transition: background-color 0.3s ease; 
+}
+
+.label-btn:hover {
+    background-color: $button-color; 
+}
+.btn-delete {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    
+    &:hover {
+        background-color: #ff1f1f;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+
+
+// Style pour le formulaire
+.form-create-project {
+  background-color: $discord-dark;
+  border: 1px solid $form-border;
+  border-radius: $form-border-radius;
+  padding: $form-padding;
+  max-width: 800px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  
+  label {
+    font-size: 1rem;
+    color: $text-white;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input[type="text"], input[type="file"], select, textarea {
+    border: 1px solid $form-input-border;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+    border-radius: 4px;
+    font-size: 1rem;
+
+    &:focus {
+      border-color: $form-input-focus-border;
+      outline: none;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-category-label,
+  .form-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-label input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  button[type="submit"] {
+    background-color: $form-button-background;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $form-button-hover-background;
+    }
+  }
+  
+  .form-file-label {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .form-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+#edit-project {
+  background-color: $discord-light;
+  padding: 22px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 1rem auto;
+
+  h2 {
+    text-align: center;
+    color: $text-white;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    label {
+      font-weight: bold;
+      color: $text-white;
+      margin-bottom: 1px;
+    }
+    #category_id{
+      color: $discord-dark;
+    }
+
+    input[type="text"],
+    textarea,
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 7px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: $text-white;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .project-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      button,
+      a {
+        padding: 10px 20px;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+
+        &.btn-save {
+          background-color: #28a745;
+          color: #fff;
+          border: none;
+        }
+
+        &.btn-save:hover {
+          background-color: #218838;
+        }
+
+        &.btn-cancel {
+          background-color: #dc3545;
+          color: #fff;
+          border: none;
+        }
+
+        &.btn-cancel:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+// Variables
+$breakpoint-md: 768px;
+$color-primary: #5865F2;
+$color-white: #FFFFFF;
+
+// Reset de base
+.navbar {
+  &__checkbox {
+    display: none; // Cache la checkbox
+  }
+
+  // Styles mobiles
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: $discord-blue;
+  padding: 1rem;
+  position: relative;
+
+  &__brand {
+    color: $color-white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    order: 1;
+  }
+
+  // Bouton burger
+  &__toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+    order: 3;
+    z-index: 10;
+
+    .navbar__icon {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: $color-white;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      &::before { top: -8px; }
+      &::after { top: 8px; }
+    }
+  }
+
+  // Menu
+  &__menu {
+    list-style: none;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    order: 4;
+    transition: max-height 0.3s ease;
+    background: $discord-dark;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    li {
+      text-align: center;
+      padding: 0.5rem 0;
+
+      a {
+        color: $color-white;
+        text-decoration: none;
+        display: block;
+        padding: 0.75rem 1rem;
+        transition: background 0.3s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  // Quand la checkbox est cochée (menu ouvert)
+  &__checkbox:checked ~ &__menu {
+    max-height: 100vh;
+    padding: 1rem 0;
+  }
+
+  &__checkbox:checked ~ &__toggle .navbar__icon {
+    background: transparent;
+
+    &::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+  }
+
+  // Version desktop
+  @media (min-width: $breakpoint-md) {
+    flex-wrap: nowrap;
+
+    &__toggle {
+      display: none; // Cache le burger
+    }
+
+    &__menu {
+      position: static;
+      display: flex;
+      max-height: none;
+      width: auto;
+      background: transparent;
+      gap: 1rem;
+      order: 2;
+
+      li {
+        padding: 0;
+
+        a {
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

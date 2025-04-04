@@ -1,0 +1,57 @@
+<section class="section edit-profile">
+    <div class="container">
+        <h2 class="section-title">Édition du Profil</h2>
+        
+        <form class="edit-form" method="post" enctype="multipart/form-data">
+            <div class="form-grid">
+                <!-- Colonne de gauche -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Prénom</label>
+                        <input type="text" name="first_name" value="<?= htmlspecialchars($user->getFirstName()) ?>" required>
+                        <?= isset($_SESSION['errors']['first_name']) ? '<p class="error">' . $_SESSION['errors']['first_name'] . '</p>' : '' ?>
+                    </div>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" name="last_name" value="<?= htmlspecialchars($user->getLastName()) ?>" required>
+                        <?= isset($_SESSION['errors']['last_name']) ? '<p class="error">' . $_SESSION['errors']['last_name'] . '</p>' : '' ?>
+                    </div>
+                </div>
+                
+                <!-- Colonne de droite -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Téléphone</label>
+                        <input type="tel" name="phone" value="<?= htmlspecialchars($user->getPhone()) ?>" required>
+                        <?= isset($_SESSION['errors']['phone']) ? '<p class="error">' . $_SESSION['errors']['phone'] . '</p>' : '' ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Date de naissance</label>
+                        <input type="text" name="birthdate" value="<?= htmlspecialchars((new DateTime($user->getBirthdate()))->format('d/m/Y')) ?>" required>
+                        <?= isset($_SESSION['errors']['birthdate']) ? '<p class="error">' . $_SESSION['errors']['birthdate'] . '</p>' : '' ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Photo de profil</label>
+                        <input type="file" name="photo">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Champ de description avec éditeur Quill -->
+            <div class="form-group full-width">
+                <label for="description">Description</label>
+                <div id="editor">
+                    <?= htmlspecialchars($user->getDescription()) ?>
+                </div>
+                <input type="hidden" name="description" id="description" value="<?= $user->getDescription() ?>">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                <a href="index.php?route=admin" class="btn btn-outline">Annuler</a>
+            </div>
+        </form>
+    </div>
+</section>

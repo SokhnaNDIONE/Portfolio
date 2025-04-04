@@ -1,0 +1,100 @@
+<!-- Hero Section -->
+<header>
+    <article>
+        <h1>Développeur Fullstack</h1>
+        <p>Créateur de solutions web performantes</p>
+        <a href="#work">Voir mes projets</a>
+    </article>
+</header>
+
+
+<!-- About Section -->
+<section id="about">
+    <h2>À propos</h2>
+    <figure>
+        <img src="<?= $user->getPhoto() ?>" alt="Photo de profil">
+    </figure>
+    <article>
+        <h3>Salut, je suis <?= htmlspecialchars($user->getFirstName())?> !</h3>
+        <p><?= $user->getDescription() ?></p>
+    </article>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills">
+    <h2>Mes Compétences</h2>
+    <ul>
+        <?php foreach ($skills as $skill): ?>
+        <li>
+            <article>
+                <h3><?= htmlspecialchars($skill["name"]) ?></h3>
+                <div>
+                    <div style="width: <?= $skill["level"] ?>%;"></div>
+                    <span><?= $skill["level"] ?>%</span>
+                </div>
+            </article>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</section>
+
+
+<!-- Filtrer par catégorie -->
+<section id="work">
+    <h2>Mes Projets</h2>
+    
+    <!-- Sélecteur de catégorie -->
+    <select id="categorySelect">
+        <option value="">Toutes les catégories</option>
+        <?php foreach ($categories as $category): ?>
+            <option value="<?= $category["id"]; ?>"><?= htmlspecialchars($category["name"]); ?></option>
+        <?php endforeach; ?>
+    </select>
+
+    <ul id="projectList">
+        <?php if(!empty($projects)): ?>
+        <?php foreach ($projects as $project): ?>
+            <li class="project-item" data-category-id="<?= $project['category_id']; ?>">
+                <article>
+                    <div>
+                        <img src="<?= $project['image']; ?>" 
+                             alt="<?= htmlspecialchars($project['title']); ?>">
+                    </div>
+                    <h3><?= htmlspecialchars($project["title"]); ?></h3>
+                    <p><?= htmlspecialchars($project["description"]); ?></p>
+                    
+                    <p>
+                        <div class="labels">
+                            <span class="label-btn"><?= htmlspecialchars($project['labels']) ?: 'Aucun label' ?></span>
+                        </div>
+                    </p>
+                    
+                    <p><strong>Catégorie :</strong> <?= htmlspecialchars($project['category_name']); ?></p>
+
+                    <a href="index.php?route=projectDetails&projectId=<?= $project['id']; ?>">Voir le projet</a>
+                </article>
+            </li>
+        <?php endforeach; ?>
+        <?php else: ?>
+        <p class="category-error">Aucun projet pour cette categorie</p>
+        <?php endif; ?>
+    </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Me Contacter</h2>
+    <address>
+        <ul>
+            <li>
+                <h3>Téléphone</h3>
+                <p><?= $userData['phone'] ?? '+33 6 12 34 56 78' ?></p>
+            </li>
+            <li>
+                <h3>Email</h3>
+                <p><?= $userData['email'] ?? 'contact@exemple.com' ?></p>
+            </li>
+        </ul>
+    </address>
+</section>

@@ -1,0 +1,50 @@
+<!-- Edit Project Section -->
+<section id="edit-project">
+    <h2>Modifier le projet</h2>
+
+    <form action="index.php?route=editProject&projectId=<?= $project['id'] ?>" method="POST">
+        <input type="hidden" name="projectId" value="<?= htmlspecialchars($project['id']) ?>">
+
+        <!-- Titre -->
+        <label for="title">Titre</label>
+        <input type="text" id="title" name="title" value="<?= htmlspecialchars($project['title']) ?>" required>
+
+        <!-- Description -->
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required><?= htmlspecialchars($project['description']) ?></textarea>
+
+        <!-- Image -->
+        <label for="image">Image</label>
+        <input type="hidden" name="current_image" value="<?= htmlspecialchars($project['image']) ?>">
+
+
+        <!-- Catégorie -->
+        <label for="category_id">Catégorie</label>
+        <select id="category_id" name="category_id">
+            <?php foreach ($categories as $category): ?>
+                <option value="<?= $category['id'] ?>" <?= $category['id'] === $project['category_id'] ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($category['name']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+
+        <!--labels-->
+        <label>Labels</label>
+        <?php foreach ($labels as $label): ?>
+            <label>
+                <input type="checkbox" name="labels[]" value="<?= $label['id'] ?>" 
+                <?= isset($projectLabels) && in_array($label['id'], $projectLabels) ? 'checked' : '' ?>>
+                <?= htmlspecialchars($label['name']) ?>
+            </label>
+        <?php endforeach; ?>
+
+        <!-- Buttons -->
+        <div class="project-actions">
+            <button type="submit" class="btn-save">Enregistrer</button>
+            <a href="index.php?route=admin" class="btn-cancel">Annuler</a>
+        </div>
+        
+    </form>
+  
+</section>

@@ -1,0 +1,40 @@
+<section class="project-details">
+    <h2 class="section-title">Détails du Projet</h2>
+
+        <div class="project-content">
+            <img src="<?= htmlspecialchars($project["image"] ?? 'default.jpg') ?>" alt="Image du projet" class="project-image">
+            <h3><?= htmlspecialchars($project["title"] ?? "Titre inconnu") ?></h3>
+            <p><?= htmlspecialchars($project["description"] ?? "Aucune description disponible.") ?></p>
+            
+             <!-- Affichage des labels -->
+            <p> 
+                <?php if (!empty($project['labels'])): ?>
+                <div class="labels">
+                        <?php foreach ($project['labels'] as $label): ?>
+                            <span class="label-btn"><?= htmlspecialchars($label['name']) ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                <?php else: ?>
+                    Aucun label
+                <?php endif; ?>
+            </p>
+
+            <!--Affichage Categorie-->
+            <p><strong>Catégorie :</strong>
+                <?php foreach ($categories as $category): ?>
+                    <?php if ($category['id'] === $project['category_id']): ?>
+                        <?= htmlspecialchars($category['name']) ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </p>
+
+
+            <?php if(isset($_SESSION["user_id"])): ?>
+            <a href="index.php?route=admin" class="btn-back">← Retour aux projets</a>
+            <?php else: ?>
+            <a href="index.php#work" class="btn-back">← Retour aux projets</a>
+            <?php endif; ?>
+        </div>
+   
+   
+</section>
